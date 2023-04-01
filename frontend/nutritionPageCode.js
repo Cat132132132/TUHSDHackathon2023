@@ -1,5 +1,5 @@
 var button = document.getElementById("addFood");
-button.addEventListener("click", updatePage)
+button.addEventListener("click", updatePage);
 function getFood()
 {
 
