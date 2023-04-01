@@ -27,7 +27,6 @@ function draw()
     const rectHeight = 90;
     const rectSpacing = canvasWidth / (rectCount + 1); // spacing between rectangles
 
-    ctx.font = '30px Arial';
     var amountOfColors = 0;
 
     for (let i = 0; i < rectCount; i++) 
@@ -39,11 +38,11 @@ function draw()
         ctx.fillRect(rectX, rectY, rectWidth, rectHeight);
     }
 
-
-    
-
-
-
+    ctx.font = '12px Arial';
+    ctx.fillStyle = "black";
+    ctx.fillText("3,000", 5, 15);
+    ctx.fillStyle = "black";
+    ctx.fillText("0", 10, canvasHeight - 10);
 }
 
 window.onload = function() {
