@@ -1,15 +1,15 @@
 /**
 Basic Parts of nutrition:
-    Calories	
-    Total Fat
-    Saturated Fat
-    Trans Fat
-    Unsaturated Fat	
-    Cholesterol
-    Carbohydrate
-    Total Sugars
-    Protein
-    Calcium	
+    Calories == blue	
+    Total Fat == red
+    Saturated Fat == orange
+    Trans Fat == green
+    Unsaturated Fat	== pink
+    Cholesterol == purple
+    Carbohydrate == black
+    Total Sugars == gray
+    Protein == another color
+    Calcium	 == another color
  */
 
 function draw()
@@ -17,9 +17,35 @@ function draw()
     var canvas = document.getElementById("nutritionStatistics");
     var ctx = canvas.getContext("2d");
 
-    ctx.fillStyle = "blue";
-    ctx.fillRect(10, 10, 50, 100);
+    const colors = ["#03045E", "#0077B6", "#00B4D8", "#90E0EF", "#CAF0F8"];
+    let canvasWidth = canvas.width;
+    let canvasHeight = canvas.height;
+
+    // Define rectangle properties
+    const rectCount = 10; // 10 rectangles across the canvas
+    const rectWidth = canvasWidth / rectCount;
+    const rectHeight = 90;
+    const rectSpacing = canvasWidth / (rectCount + 1); // spacing between rectangles
+
+    ctx.font = '30px Arial';
+    var amountOfColors = 0;
+
+    for (let i = 0; i < rectCount; i++) 
+    {
+        const rectX = i * rectWidth + (i + 1) * rectSpacing;
+        const rectY = canvasHeight - rectHeight; // place rectangles at the bottom of the canvas
+        ctx.fillStyle = colors[amountOfColors];
+        amountOfColors++;
+        ctx.fillRect(rectX, rectY, rectWidth, rectHeight);
+    }
+
+
+    
+
+
+
 }
+
 window.onload = function() {
     draw();
 };
