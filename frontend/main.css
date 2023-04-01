@@ -4,3 +4,8 @@ body {
 .nav-link:hover {
     color: red; /* we can change the colors to what whatever we want these colors are just for testing*/
 }
+.nutritionButton
+{
+    float: right;
+    background-color: green;
+}
