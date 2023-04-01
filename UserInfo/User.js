@@ -2,10 +2,9 @@
 // only one file is used to gather the data stored
 class User
 {
-    constructor(name, dietchoice, weight, height, gender)
+    constructor(name, weight, height, gender)
     {
         this.name = name;
-        this.dietchoice = dietchoice;
         this.weight = weight;
         this.height = height;
         this.gender = gender;
@@ -18,12 +17,6 @@ class User
     getName()
     {
         return this.name;
-    }
-
-    /**@returns diet choice */
-    getDietChoice()
-    {
-        return this.dietchoice;
     }
 
     /**@returns weight in lbs */
