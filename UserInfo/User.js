@@ -67,6 +67,6 @@ class User
      */
     calcBMI(height, weight)
     {
-        return 703*weight / (height*height);
+        return (703*weight / (height*height)).toFixed(2);
     }
-    }
+}
