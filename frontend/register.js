@@ -13,7 +13,7 @@ gender = "male";
  * @param {number} weight weight in pounds
  * @param {number} age age in years
  * @param {string} gender gender - either male or female. The gender affects the equation used
- * @returns the basal metabolic rate, in calories.
+ * @returns the basal metabolic rate, in calories per day.
  */
 function calcBMR(height, weight, age, gender)
 {
@@ -28,4 +28,16 @@ function calcBMR(height, weight, age, gender)
     }
 }
 
-console.log(calcBMR(68, 115, 15, "male"));
+/**
+ * Calculates the Body Mass Index of a person, provided with their height and weight.
+ * @param {number} height height in inches
+ * @param {number} weight weight in pounds
+ * @returns 
+ */
+function calcBMI(height, weight)
+{
+    return 703*weight / (height*height);
+}
+
+console.log(calcBMR(height, weight, age, gender));
+console.log(calcBMI(height, weight));
