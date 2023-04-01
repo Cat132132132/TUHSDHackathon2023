@@ -1,3 +1,6 @@
 body {
     background-color: lightblue;
 }
+.nav-link:hover {
+    color: red; /* we can change the colors to what whatever we want these colors are just for testing*/
+}
