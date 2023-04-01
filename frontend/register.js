@@ -1,18 +1,19 @@
 //height (in inches)
-
+height = 68;
 //weight (in lbs)
-
+weight = 115;
 //age (in years)
-
-//
+age = 15;
+//gender (male or female)
+gender = "male";
 
 /**
- * Calculates Basal Metabolic Rate using the Mifflin-St Jeor Equation.
+ * Calculates resting calorie rate using the Mifflin-St Jeor Equation.
  * @param {number} height height in inches
  * @param {number} weight weight in pounds
  * @param {number} age age in years
  * @param {string} gender gender - either male or female. The gender affects the equation used
- * @returns 
+ * @returns the basal metabolic rate, in calories.
  */
 function calcBMR(height, weight, age, gender)
 {
