@@ -1,4 +1,5 @@
-//this class will be used for each person that will be logged in
+// since there is only going to be one instence of this running
+// only one file is used to gather the data stored
 class User
 {
     constructor(name, dietchoice, weight, height)
