@@ -1,5 +1,6 @@
 function add_food_visible() {
-    document.getElementById("add_food_div").style.display="shown"
+    console.log("lsdjlfskdjfkl")
+    document.getElementById("add_food_div").style.display="block"
     location.replace("#add_food_div")
 }
 //var button = document.getElementById("addFood");
