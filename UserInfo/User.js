@@ -1,5 +1,6 @@
 // since there is only going to be one instence of this running
 // only one file is used to gather the data stored
+localStorage.setItem("a", "as");
 class User
 {
     constructor(name, weight, height, gender)
@@ -35,7 +36,5 @@ class User
     getGender()
     {
         return this.gender;
-    }
-
-    
+    }  
 }
