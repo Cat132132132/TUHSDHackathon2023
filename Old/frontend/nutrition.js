@@ -20,7 +20,7 @@ for (let i = 0; i <= 9; i++)
         
     totalCount[i]=parseFloat(localStorage.getItem(storageNames[i]));
     } else {
-        totalCount[i]=0
+        totalCount[i]=0;
     }
     
     console.log(storageNames[i], totalCount[i]);
@@ -102,17 +102,4 @@ function returnValues()
     localStorage.setItem("CholesterolCount", totalCount[7]);
     localStorage.setItem("PotassiumCount", totalCount[8]);
     localStorage.setItem("IronCount", totalCount[9]);
-}
-
-function getFood()
-{
-
-}
-function updateValues()
-{
-
-}
-function getAPIValues()
-{
-
 }

@@ -10,6 +10,9 @@ const allStorageNames = [
     "PotassiumCount",  
     "IronCount"];
 
+    /**
+     * This file gets basic units from daily values that are limited at the max.
+     */
 function getReccomendation()
 {
     console.log("running.");
