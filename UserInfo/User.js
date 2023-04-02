@@ -6,7 +6,7 @@ class User
     /**
      * Constructor for the User class
      */
-    constructor(name, weight, height, gender)
+    constructor(name, weight, height, age, gender)
     {
         this.name = name;
         this.weight = weight;
