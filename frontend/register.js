@@ -17,7 +17,7 @@ function setCookie(cname, cvalue, exdays) {
 
 
 
-document.getElementById("button").addEventListener("click", function()
+document.getElementById("submit").addEventListener("click", function()
 {
     
     var name = document.getElementsByName("name")[0].value;
