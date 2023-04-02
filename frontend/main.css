@@ -2,6 +2,10 @@ body {
     background-color: #add8e6;
 }
 
+info {
+    cursor: default;
+}
+
 .nav-item:hover {
     border-radius: 10px;
     background-color: lightgrey;
