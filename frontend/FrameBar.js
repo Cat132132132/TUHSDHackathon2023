@@ -89,9 +89,9 @@ function canvasDraw(blank)
     }
     else
     {
-        ctx1.fillStyle("#add8e6");
+        ctx1.fillStyle = "#add8e6";
         ctx1.fillRect(0, 0, canvas1Width, canvas1Height);
-        ctx2.fillStyle("#add8e6");
+        ctx2.fillStyle = "#add8e6";
         ctx2.fillRect(0, 0, canvas2Width, canvas2Height);
     }
     
@@ -113,7 +113,7 @@ function canvasDraw(blank)
     }
     else
     {
-        ctx2.fillStyle("#add8e6");
+        ctx1.fillStyle = "#add8e6";
         ctx2.fillRect(0, 0, canvas2Width, canvas2Height);
     }
     
