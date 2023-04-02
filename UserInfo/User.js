@@ -3,11 +3,15 @@
 localStorage.setItem("a", "as");
 class User
 {
+    /**
+     * Constructor for the User class
+     */
     constructor(name, weight, height, gender)
     {
         this.name = name;
         this.weight = weight;
         this.height = height;
+        this.age = age;
         this.gender = gender;
     }
 
@@ -40,13 +44,9 @@ class User
 
     /**
      * Calculates resting calorie rate using the Mifflin-St Jeor Equation.
-     * @param {number} height height in inches
-     * @param {number} weight weight in pounds
-     * @param {number} age age in years
-     * @param {string} gender gender - either male or female. The gender affects the equation used
      * @returns the basal metabolic rate, in calories per day.
      */
-    calcBMR(height, weight, age, gender)
+    calcBMR()
     {
         if (gender == "male")
         {
@@ -61,11 +61,9 @@ class User
 
     /**
      * Calculates the Body Mass Index of a person, provided with their height and weight.
-     * @param {number} height height in inches
-     * @param {number} weight weight in pounds
-     * @returns 
+     * @returns BMI
      */
-    calcBMI(height, weight)
+    calcBMI()
     {
         return (703*weight / (height*height)).toFixed(2);
     }
