@@ -1,9 +1,23 @@
 body {
     background-color: #add8e6;
 }
-.nav-link:hover {
+
+.nav-item:hover {
+    border-radius: 10px;
+    background-color: lightgrey;
+    
+}
+.nav-link:hover
+{
+    
     color: red; /* we can change the colors to what whatever we want these colors are just for testing*/
 }
+
+.nav-item:active {
+    background-color: grey;
+    
+}
+
 .nutritionButton
 {
     float: right;

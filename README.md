@@ -5,4 +5,4 @@
 
 Health Tracker is designed to help you learn about your diet and stay healthy.
 
-[Click here to see the website](/frontend/index.html)
+[Click here to see the website](https://cat132132132.github.io/TUHSDHackathon2023/frontend/index.html)

@@ -9,10 +9,11 @@
     
     <link href="main.css" rel="stylesheet">
     <script src="profile.js"></script>
+    <link rel="icon" type="image/x-icon" href="../Resources/favicon.ico">
 </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand ps-3" href="index.html">Health Tracker</a>
+        <a class="navbar-brand ps-3 active" href="index.html"><img src="logo.png" alt="Bootstrap" width="30" height="30"> Health Tracker</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -29,8 +30,6 @@
             <li class="nav-item">
               <a class="nav-link" href="nutrition.html">Nutrition</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="rankings.html">Rankings</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="about.html">About</a>
@@ -64,11 +63,13 @@
             <img src="https://github.com/Cat132132132/TUHSDHackathon2023/blob/main/Resources/UserPicture.png?raw=true" 
             style="border-radius: 25%;" alt="Default User Image">
             <h1 id="userName"></h1>
-            <p>Basic Information:</p>
-            <p>Age: <span id="userAge" style="font-style: oblique; text-transform: capitalize;"></span></p>
-            <p>Gender: <span id="userGender" style="font-style: oblique; text-transform: capitalize;"></span></p>
-            <p>Weight: <span id="userWeight" style="font-style: oblique; text-transform: capitalize;"></span> lbs</p>
-            <p>Height: <span id="userHeight" style="font-style: oblique; text-transform: capitalize;"></span></p>
+            <p>Basic Information</p>
+            <p>Age: <span id="userAge" style="text-transform: capitalize;"></span> yrs</p>
+            <p>Gender: <span id="userGender" style="text-transform: capitalize;"></span></p>
+            <p>Weight: <span id="userWeight" style="text-transform: capitalize;"></span> lbs</p>
+            <p>Height: <span id="userHeightFt" style="text-transform: capitalize;"></span> ft <span id="userHeightIn" style="text-transform: capitalize;"></span> in</p>
+            <p>Your BMI: <span id="userBmi" style="text-transform: capitalize;"></span></p>
+            <p>Your BMR: <span id="userBmr" style="text-transform: capitalize;"></span></p>
         </div>
       </div>
       <a href="#" id="addFood" onclick="logOut(); return false;" class="btn btn-primary top-btn" style="position: fixed; right: 20px; bottom: 10px;">Log Out</a>
