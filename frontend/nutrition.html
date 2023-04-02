@@ -20,6 +20,19 @@
         border: 0.1px solid rgb(201, 195, 195);
       }
     </style>
+    <script>
+      function pressedButton()
+      {
+        returnValues();
+        addFoodBoxNotVisible();
+        canvasDraw();
+      }
+      function clearItems()
+      {
+        resetValues();
+        canvasDraw();
+      }
+    </script>
 </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -76,16 +89,17 @@
         <div class="p-5 bg-light rounded-4" style="display: flex;";>
             <h1 style="margin-right: 20px;">Statistics:</h1>
         </div>
+        <br>
             <canvas id="canvas1" width="720" height="300" style="margin-left: auto;"></canvas>
       </div>
 
       <div class="container py-4">
         <p style="word-spacing: 35px; text-align: center; vertical-align: bottom; margin-top: auto;">
-          (1)-Calories	
-          (2)-Total-Fat
-          (3)-Carbohydrates
-          (4)-Sodium
-          (5)-Sugar</p>
+          (6)-Calories	
+          (7)-Total-Fat
+          (8)-Carbohydrates
+          (9)-Sodium
+          (10)-Sugar</p>
       </div>
 
       <div class="container py-4">
@@ -94,14 +108,18 @@
 
       <div class="container py-4">
         <p style="word-spacing: 35px; text-align: center; vertical-align: bottom; margin-top: auto;">
-          (1)-Calories	
-          (2)-Total-Fat
-          (3)-Carbohydrates
-          (4)-Sodium
-          (5)-Sugar</p>
+          (1)-Saturated-Fat
+          (2)-Calcium
+          (3)-Cholesterol
+          (4)-Potassium
+          (5)-Iron</p>
       </div>
 
       <a href="#" id="addFood" onclick="addFoodBoxVisible(); return false;" class="btn btn-primary top-btn" style="position: fixed; right: 20px; bottom: 10px;">Add Food +</a>
+
+      <a href="#" id="resetValues" onclick="clearItems(); return false;" class="btn btn-primary top-btn" style="position: fixed; 
+      bottom: 10px; left: 20px; background-color: #cfcfcf; color: black; border-color: transparent;">Reset Values</a>    
+
       <div class="container py-4" id="add_food_div" style="visibility: hidden;">
         <div class="p-5 bg-light rounded-4">
             <h1>Add Food</h1>
@@ -133,7 +151,7 @@
               </div>
             </div>
             
-            <button id="addNutrients" style="margin-left: auto; display: flex;" onclick="returnValues(); addFoodBoxNotVisible(); return false;">Submit</button>
+            <button id="addNutrients" style="margin-left: auto; display: flex;" onclick="pressedButton(); return false;">Submit</button>
         </div>
       </div>
   </body>

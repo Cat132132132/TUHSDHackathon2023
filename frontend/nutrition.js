@@ -2,6 +2,22 @@
 //button.addEventListener("click", updatePage);
 
 var totalCount = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const storageNames = [  
+    "CalorieCount",  
+    "TotalFatCount",  
+    "CarbohydrateCount",  
+    "SodiumCount",  
+    "SugarCount",  
+    "SaturatedFatCount",  
+    "CalciumCount",  
+    "CholesterolCount",  
+    "PotassiumCount",  
+    "IronCount"];
+
+for (let i = 0; i < 9; i++)
+{
+    localStorage.setItem[storageNames[i]] = 0;
+}
 /**
  * IN ORDER
  * Calories (0)
@@ -17,38 +33,62 @@ var totalCount = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
  */
 
 function addFoodBoxVisible() {
-    console.log("lsdjlfskdjfkl");
     document.getElementById("add_food_div").style.visibility="visible";
 }
 
 function addFoodBoxNotVisible() {
-    console.log("lsdjlfskdjfkl");
     document.getElementById("add_food_div").style.visibility="hidden";
+}
+
+function resetValues()
+{
+    for (let i = 0; i < 10; i++)
+    {
+        localStorage.setItem(storageNames[i], 0);
+    }
 }
 
 function returnValues()
 {
-    try
-    {
-        totalCount[0] += document.getElementById("CalorieCount");
-        totalCount[1] += document.getElementById("TotalFatCount");
-        totalCount[2] += document.getElementById("CarbohydrateCount");
-        totalCount[3] += document.getElementById("SodiumCount");
-        totalCount[4] += document.getElementById("SugarCount");
-        
-        totalCount[5] += document.getElementById("SaturatedFatCount");
-        totalCount[6] += document.getElementById("CalciumCount");
-        totalCount[7] += document.getElementById("CholesterolCount");
-        totalCount[8] += document.getElementById("PotassiumCount");
-        totalCount[9] += document.getElementById("IronCount");
-    }
-    catch (err)
-    {
-        console.log("There was an error assigning values. Nothing was changed.");
+    var CalorieCount = document.getElementById("CalorieCount").value;
+    var TotalFatCount = document.getElementById("TotalFatCount").value;
+    var CarbohydrateCount = document.getElementById("CarbohydrateCount").value;
+    var SodiumCount = document.getElementById("SodiumCount").value;
+    var SugarCount = document.getElementById("SugarCount").value;
+
+    var SaturatedFatCount = document.getElementById("SaturatedFatCount").value;
+    var CalciumCount = document.getElementById("CalciumCount").value;
+    var CholesterolCount = document.getElementById("CholesterolCount").value;
+    var PotassiumCount = document.getElementById("PotassiumCount").value;
+    var IronCount = document.getElementById("IronCount").value;
+
+    try {
+        totalCount[0] += parseInt(CalorieCount);
+        totalCount[1] += parseInt(TotalFatCount);
+        totalCount[2] += parseInt(CarbohydrateCount);
+        totalCount[3] += parseInt(SodiumCount);
+        totalCount[4] += parseInt(SugarCount);
+
+        totalCount[5] += parseInt(SaturatedFatCount);
+        totalCount[6] += parseInt(CalciumCount);
+        totalCount[7] += parseInt(CholesterolCount);
+        totalCount[8] += parseInt(PotassiumCount);
+        totalCount[9] += parseInt(IronCount);
+    } catch (error) {
+        console.log("Error assigning values.");
     }
 
-    localStorage.setItem("nutritionValueCount", totalCount);
+    localStorage.setItem("CalorieCount", totalCount[0]);
+    localStorage.setItem("TotalFatCount", totalCount[1]);
+    localStorage.setItem("CarbohydrateCount", totalCount[2]);
+    localStorage.setItem("SodiumCount", totalCount[3]);
+    localStorage.setItem("SugarCount", totalCount[4]);
 
+    localStorage.setItem("SaturatedFatCount", totalCount[5]);
+    localStorage.setItem("CalciumCount", totalCount[6]);
+    localStorage.setItem("CholesterolCount", totalCount[7]);
+    localStorage.setItem("PotassiumCount", totalCount[8]);
+    localStorage.setItem("IronCount", totalCount[9]);
 }
 
 function getFood()
