@@ -1,8 +1,13 @@
-//height (in inches)
-height = 68;
-//weight (in lbs)
-weight = 115;
-//age (in years)
-age = 15;
-//gender (male or female)
-gender = "male";
+/**
+ * 
+ */
+
+document.getElementById("submit").addEventListener("click", function()
+{
+    var firstName = document.getElementsByName("fname")[0].value;
+    var lastName = document.getElementsByName("lname")[0].value;
+    var age = document.getElementsByName("age")[0].value;
+    var gender = document.getElementsByName("gender")[0].value;
+    
+    
+});
