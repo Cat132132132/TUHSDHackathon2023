@@ -9,6 +9,8 @@
     <link href="main.css" rel="stylesheet">
     <script src="nutrition.js"></script>
     <script src="FrameBar.js"></script>
+    <script src="Recommendation.js"></script>
+
     <style>
       button
       {
@@ -27,11 +29,11 @@
         returnValues();
         addFoodBoxNotVisible();
         canvasDraw(false);
+        getReccomendation();
       }
       function clearItems()
       {
         resetValues();
-        alert("Refresh the page and the changes will take place!");
       }
     </script>
     <link rel="icon" type="image/x-icon" href="../Resources/favicon.ico">
@@ -93,6 +95,8 @@
       <div class="container py-4">
         <div class="p-5 bg-light rounded-4" style="display: flex;";>
             <h1 style="margin-right: 20px;">Statistics:</h1>
+            <br>
+            <p id="recommendation">As</p>
         </div>
         <br>
             <canvas id="canvas1" width="720" height="300" style="margin-left: auto;"></canvas>
