@@ -76,10 +76,11 @@ function setValues()
 
 function logOut()
 {
-    for (let i = 0; i < 5; i++)
-    {
-        localStorage.setItem(val[i], null);
-    }
+    localStorage.setItem("name", "Default User");
+    localStorage.setItem("age", 0);
+    localStorage.setItem("weight", 0);
+    localStorage.setItem("height", "0'0");
+    localStorage.setItem("gender", "Default Gender");
     window.user.setUserToNull();
     setValues();
     location.reload();
