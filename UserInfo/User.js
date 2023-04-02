@@ -66,4 +66,13 @@ class User
     {
         return (703*weight / (height*height)).toFixed(2);
     }
+
+    setUserToNull()
+    {
+        this.name = "Default Name";
+        this.gender = "Default Gender";
+        this.weight = 0;
+        this.height = 0;
+        this.age = 0;
+    }
 }

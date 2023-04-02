@@ -9,7 +9,7 @@ document.getElementById("submit").addEventListener("click", function()
     var height = document.getElementsByName("height")[0].value;
     var age = document.getElementsByName("age")[0].value;
     var gender = document.getElementsByName("gender")[0].value;
-    user = new User(name, weight, height, age, gender);
+    window.user = new User(name, weight, height, age, gender);
     console.log("Registered ",name,weight,height,age,gender)
     localStorage.setItem("name", name);
     localStorage.setItem("weight", weight);
