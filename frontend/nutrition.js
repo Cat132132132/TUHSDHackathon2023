@@ -57,30 +57,33 @@ function resetValues()
 }
 
 function returnValues()
-{
+{   
+    var ServingsConsumed = parseInt(document.getElementById("ServingsConsumed").value);
+    
     var CalorieCount = document.getElementById("CalorieCount").value;
     var TotalFatCount = document.getElementById("TotalFatCount").value;
     var CarbohydrateCount = document.getElementById("CarbohydrateCount").value;
     var SodiumCount = document.getElementById("SodiumCount").value;
     var SugarCount = document.getElementById("SugarCount").value;
 
+    
     var SaturatedFatCount = document.getElementById("SaturatedFatCount").value;
     var CalciumCount = document.getElementById("CalciumCount").value;
     var CholesterolCount = document.getElementById("CholesterolCount").value;
     var PotassiumCount = document.getElementById("PotassiumCount").value;
     var IronCount = document.getElementById("IronCount").value;
+    
+    totalCount[0] += parseInt(CalorieCount)*ServingsConsumed;
+    totalCount[1] += parseInt(TotalFatCount)*ServingsConsumed;
+    totalCount[2] += parseInt(CarbohydrateCount)*ServingsConsumed;
+    totalCount[3] += parseInt(SodiumCount)*ServingsConsumed;
+    totalCount[4] += parseInt(SugarCount)*ServingsConsumed;
 
-    totalCount[0] += parseInt(CalorieCount);
-    totalCount[1] += parseInt(TotalFatCount);
-    totalCount[2] += parseInt(CarbohydrateCount);
-    totalCount[3] += parseInt(SodiumCount);
-    totalCount[4] += parseInt(SugarCount);
-
-    totalCount[5] += parseInt(SaturatedFatCount);
-    totalCount[6] += parseInt(CalciumCount);
-    totalCount[7] += parseInt(CholesterolCount);
-    totalCount[8] += parseInt(PotassiumCount);
-    totalCount[9] += parseInt(IronCount);
+    totalCount[5] += parseInt(SaturatedFatCount)*ServingsConsumed;
+    totalCount[6] += parseInt(CalciumCount)*ServingsConsumed;
+    totalCount[7] += parseInt(CholesterolCount)*ServingsConsumed;
+    totalCount[8] += parseInt(PotassiumCount)*ServingsConsumed;
+    totalCount[9] += parseInt(IronCount)*ServingsConsumed;
 
     localStorage.setItem("CalorieCount", parseInt(CalorieCount));
     localStorage.setItem("TotalFatCount", parseInt(TotalFatCount));

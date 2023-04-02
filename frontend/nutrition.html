@@ -128,9 +128,16 @@
       <div class="container py-4" id="add_food_div" style="visibility: hidden;">
         <div class="p-5 bg-light rounded-4">
             <h1>Add Food</h1>
-            <p>Enter the information about your food product.</p>
+            <p>Enter the amount of servings consumed. Then enter the information from the nutrition label on your food product.</p>
+            
+            <div style="text-align: center;">
+              <p>Amount of Servings Consumed</p>
+              <input type="text" id="ServingsConsumed">
+            </div>
             <div style="display: flex;">
+              
               <div style="width: 50%;">
+                
                 <p>Calories</p>
                 <input type="text" id="CalorieCount">
                 <p>Total Fat</p>
@@ -143,6 +150,7 @@
                 <input type="text" id="SugarCount">
               </div>
               <div style="width: 50%;">
+                
                 <p>Saturated Fat</p>
                 <input type="text" id="SaturatedFatCount">
                 <p>Calcium</p>
