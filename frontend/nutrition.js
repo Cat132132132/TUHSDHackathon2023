@@ -1,17 +1,21 @@
-function add_food_visible() {
-    console.log("lsdjlfskdjfkl")
-    document.getElementById("add_food_div").style.display="block"
-    location.replace("#add_food_div")
-}
 //var button = document.getElementById("addFood");
 //button.addEventListener("click", updatePage);
-var addFood_button = document.getElementById("addNutrients");
 var input1 = document.getElementById("input1");
 var input2 = document.getElementById("input2");
 var input3 = document.getElementById("input3");
 var input4 = document.getElementById("input4");
 var input5 = document.getElementById("input5");
-button.addEventListener("click", updatePage);
+
+function addFoodBoxVisible() {
+    console.log("lsdjlfskdjfkl");
+    document.getElementById("add_food_div").style.visibility="visible";
+}
+function addFoodBoxNotVisible() {
+    console.log("lsdjlfskdjfkl");
+    document.getElementById("add_food_div").style.visibility="hidden";
+}
+
+
 function getFood()
 {
 
@@ -24,4 +28,3 @@ function getAPIValues()
 {
 
 }
-
