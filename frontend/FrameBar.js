@@ -97,9 +97,9 @@ function canvasDraw(blank)
     
     ctx1.font = "12px Arial";
     ctx1.fillStyle = "black";
-    ctx1.fillText("500", 5, 15);
+    ctx1.fillText("0", 5, 15);
     ctx1.fillStyle = "black";
-    ctx1.fillText("0", 10, canvas1Height - 10);
+    ctx1.fillText("500", 10, canvas1Height - 10);
 
     /**
      * 
@@ -119,9 +119,9 @@ function canvasDraw(blank)
     
     ctx2.font = "12px Arial";
     ctx2.fillStyle = "black";
-    ctx2.fillText("500", 5, 15);
+    ctx2.fillText("0", 5, 15);
     ctx2.fillStyle = "black";
-    ctx2.fillText("0", 10, canvas2Height - 10);
+    ctx2.fillText("500", 10, canvas2Height - 10);
 }
 
 window.onload = function() {
