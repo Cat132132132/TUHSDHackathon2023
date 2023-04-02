@@ -32,7 +32,7 @@
             </li>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
+              <a class="nav-link" href="about.html">About Us</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" href="profile.html">Profile</a>
@@ -69,7 +69,23 @@
             <p>Weight: <span id="userWeight" style="text-transform: capitalize;"></span> lbs</p>
             <p>Height: <span id="userHeightFt" style="text-transform: capitalize;"></span> ft <span id="userHeightIn" style="text-transform: capitalize;"></span> in</p>
             <p>Your BMI: <span id="userBmi" style="text-transform: capitalize;"></span></p>
-            <p>Your BMR: <span id="userBmr" style="text-transform: capitalize;"></span></p>
+            <div class = "BmiPrompt">
+              <p style="cursor:default">What is BMI? &#9432</p>
+            </div>
+            <div class = "BmiInfo">
+              <p>
+                Body Mass Index (BMI) is a person's weight in kilograms (or pounds) divided by the square of height in meters (or feet). 
+                A high BMI can indicate high body fatness. BMI screens for weight categories that may lead to health problems, but 
+                it does not diagnose the body fatness or health of an individual.
+              </p>
+            </div>
+            <p>Your BMR: <span id="userBmr" style="text-transform: capitalize;"></span> </p>
+            <div class = "BmrPrompt">
+              <p style="cursor:default">What is BMR? &#9432</p>
+            </div>
+            <div class = "BmrInfo">
+
+            </div>
         </div>
       </div>
       <a href="profile.html" id="logout" onclick="logOut();" class="btn btn-primary top-btn" style="position: fixed; right: 20px; bottom: 10px;">Log Out</a>
