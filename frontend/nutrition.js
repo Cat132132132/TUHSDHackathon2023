@@ -20,7 +20,7 @@ for (let i = 0; i <= 9; i++)
         
     totalCount[i]=parseFloat(localStorage.getItem(storageNames[i]));
     } else {
-        totalCount[i]=0
+        totalCount[i]=0;
     }
     
     console.log(storageNames[i], totalCount[i]);
