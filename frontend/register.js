@@ -15,8 +15,23 @@ function setCookie(cname, cvalue, exdays) {
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
   }
 
+  var $input = $('input:text'),
+    $register = $('#register');    
+$register.attr('disabled', true);
+
+$input.keyup(function() {
+    var trigger = false;
+    $input.each(function() {
+        if (!$(this).val()) {
+            trigger = true;
+        }
+    });
+    trigger ? $register.attr('disabled', true) : $register.removeAttr('disabled');
+});
+
 document.getElementById("submit").addEventListener("click", function()
 {
+    
     var name = document.getElementsByName("name")[0].value;
     var weight = document.getElementsByName("weight")[0].value;
     //the *1 at the end of the next line converts the number of inches to a int
