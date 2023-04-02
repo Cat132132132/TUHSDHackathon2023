@@ -101,9 +101,8 @@
           (5)-Sugar</p>
       </div>
 
-      <button onclick="add_food_visible()" id="addFood" class="btn btn-primary top-btn" style="position: fixed; right: 20px; top: 10px;">Add Food +</button>
-      <!--change display to none when you want to hide the add food area-->
-      <div class="container py-4" id="add_food_div" style="display: block;">
+      <a href="#" id="addFood" onclick="addFoodBoxVisible()" class="btn btn-primary top-btn" style="position: fixed; right: 20px; bottom: 10px;">Add Food +</a>
+      <div class="container py-4" id="add_food_div" style="visibility: hidden;">
         <div class="p-5 bg-light rounded-4">
             <h1>Add Food</h1>
             <p>Enter the information about your food product.</p>
@@ -117,7 +116,7 @@
             <input type="text" id="myInput">
             <h6>Amount of Sugar</h6>
             <input type="text" id="myInput">
-<button id="addNutrients" style="margin-left: auto; display: flex;">Submit</button>
+<button id="addNutrients" style="margin-left: auto; display: flex;" onclick="addFoodBoxNotVisible()">Submit</button>
         </div>
       </div>
   </body>
