@@ -26,6 +26,9 @@ function updateStopwatch() {
 
 // Start the stopwatch
 function startStopwatch() {
+  document.getElementById("reset").style.display="inline";
+  document.getElementById("pause").style.display="inline";
+  document.getElementById("start").style.display="none";
   intervalId = setInterval(() => {
     // Increment the time by one second
     seconds++;
@@ -47,10 +50,33 @@ function startStopwatch() {
 function pauseStopwatch() {
   clearInterval(intervalId);
   intervalId = null;
+  document.getElementById("pause").style.display="none";
+  document.getElementById("resume").style.display="inline";
 }
 
+//Resume the stopwatch
+function resumeStopwatch() {
+  document.getElementById("resume").style.display="none";
+  document.getElementById("pause").style.display="inline";
+  intervalId = setInterval(() => {
+    // Increment the time by one second
+    seconds++;
+    if (seconds >= 60) {
+      seconds = 0;
+      minutes++;
+    }
+    if (minutes >= 60) {
+      minutes = 0;
+      hours++;
+    }
+
+    // Update the stopwatch display
+    updateStopwatch();
+  }, 1000);
+}
 // Reset the stopwatch
 function resetStopwatch() {
+  
     let label = "Good workout for ";
     if (hours > 9)
     {
@@ -95,4 +121,12 @@ function resetStopwatch() {
 
   // Update the stopwatch display
   updateStopwatch();
+
+  //show the start stopwatch button again
+  document.getElementById("start").style.display="inline";
+
+  //hide the reset, pause, and resume buttons
+  document.getElementById("reset").style.display="none";
+  document.getElementById("pause").style.display="none";
+  document.getElementById("resume").style.display="none";
 }
