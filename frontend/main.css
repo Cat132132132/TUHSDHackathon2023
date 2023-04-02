@@ -1,9 +1,17 @@
 body {
     background-color: lightblue;
 }
-.nav-link:hover {
+
+.nav-link:hover, .nav-item:hover {
+    background-color: gray;
     color: red; /* we can change the colors to what whatever we want these colors are just for testing*/
 }
+
+.nav-link:active, .nav-item:active {
+    background-color: slategrey;
+    color: lightblue; /* we can change the colors to what whatever we want these colors are just for testing*/
+}
+
 .nutritionButton
 {
     float: right;
