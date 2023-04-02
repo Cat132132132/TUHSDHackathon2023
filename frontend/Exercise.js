@@ -1,49 +1,64 @@
-var stopwatch = document.getElementById('stopwatch');
-var startButton = document.getElementById('start');
-var pauseButton = document.getElementById('stop');
-var resetButton = document.getElementById('reset');
+// Get the HTML elements that we'll be interacting with
+const stopwatch = document.getElementById("stopwatch");
+const startButton = document.getElementById("start");
+const pauseButton = document.getElementById("pause");
+const resetButton = document.getElementById("reset");
 
-var seconds = 0;
-var minutes = 0;
-var hours = 0;
+// Set up our initial values for time
+let hours = 0;
+let minutes = 0;
+let seconds = 0;
+let intervalId = null;
 
-var run = false;
+// Update the stopwatch display with the current time
+function updateStopwatch() {
+  // Format the time into a string
+  const timeString =
+    (hours < 10 ? "0" + hours : hours) +
+    ":" +
+    (minutes < 10 ? "0" + minutes : minutes) +
+    ":" +
+    (seconds < 10 ? "0" + seconds : seconds);
 
-let startTime = 0;
-let elapsedTime = 0;
-let interval;
+  // Update the stopwatch display
+  document.getElementById("stopwatch").textContent = timeString;
+}
 
-startButton.addEventListener('click', function() {
-    let display = '00:00:00';
-    intervalId = setInterval(function() {
-      seconds++;
-      if (seconds == 60) {
-        seconds = 0;
-        minutes++;
-      }
-      if (minutes == 60) {
-        minutes = 0;
-        hours++;
-      }
-      display = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
-      stopwatch.textContent = display;
-    }, 1000);
-});
-
-pauseButton.addEventListener('click', function() {
-    if (run) {
-        clearInterval(intervalId);
-        run = false;
-    } else {
-        run = true;
+// Start the stopwatch
+function startStopwatch() {
+  intervalId = setInterval(() => {
+    // Increment the time by one second
+    seconds++;
+    if (seconds >= 60) {
+      seconds = 0;
+      minutes++;
     }
-});
+    if (minutes >= 60) {
+      minutes = 0;
+      hours++;
+    }
 
-resetButton.addEventListener('click', function() {
-    clearInterval(intervalId);
-    stopwatch.textContent = '00:00:00';
-    seconds = 0;
-    minutes = 0;
-    hours = 0;
-    run = false;
-});
+    // Update the stopwatch display
+    updateStopwatch();
+  }, 1000);
+}
+
+// Pause the stopwatch
+function pauseStopwatch() {
+  clearInterval(intervalId);
+  intervalId = null;
+}
+
+// Reset the stopwatch
+function resetStopwatch() {
+  // Reset the time values
+  hours = 0;
+  minutes = 0;
+  seconds = 0;
+
+  // Stop the stopwatch
+  pauseStopwatch();
+
+  // Update the stopwatch display
+  updateStopwatch();
+}
