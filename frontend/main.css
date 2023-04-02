@@ -2,14 +2,21 @@ body {
     background-color: lightblue;
 }
 
-.nav-link:hover, .nav-item:hover {
-    background-color: gray;
-    color: red; /* we can change the colors to what whatever we want these colors are just for testing*/
+.nav-item:hover {
+    border-radius: 10px;
+    background-color: lightgrey;
+    
+}
+.nav-link:hover
+{
+    text-shadow: 2px 2px 5px #000000;
+    color: lightblue; /* we can change the colors to what whatever we want these colors are just for testing*/
 }
 
-.nav-link:active, .nav-item:active {
-    background-color: slategrey;
-    color: lightblue; /* we can change the colors to what whatever we want these colors are just for testing*/
+
+.nav-item:active {
+    background-color: grey;
+    
 }
 
 .nutritionButton
