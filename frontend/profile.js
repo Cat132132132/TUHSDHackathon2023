@@ -17,6 +17,7 @@ const inputval = [
 function setValues() 
 {
     if (!localStorage.getItem("age")) {
+        console.log("age not found in localStorage, setting default value")
         document.getElementById("userAge").innerHTML = 0;
     } 
     else {
@@ -27,6 +28,7 @@ function setValues()
     
     if (!localStorage.getItem("name"))
     {
+        console.log("name not found in localStorage, setting default value")
         document.getElementById("userName").innerHTML = "Default User";
     }
     else
@@ -38,6 +40,7 @@ function setValues()
     
     if (!localStorage.getItem("gender"))
     {
+        console.log("gender not found in localStorage, setting default value")
         document.getElementById("userGender").innerHTML = "Default Gender";
     }
     else
@@ -49,6 +52,7 @@ function setValues()
     
     if (!localStorage.getItem("weight"))
     {
+        console.log("weight not found in localStorage, setting default value")
         document.getElementById("userWeight").innerHTML = "000.00";
     }
     else
