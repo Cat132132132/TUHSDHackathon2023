@@ -51,6 +51,40 @@ function pauseStopwatch() {
 
 // Reset the stopwatch
 function resetStopwatch() {
+    let label = "Good workout for ";
+    if (hours > 9)
+    {
+        label += hours;
+    }
+    else
+    {
+        label += "0" + hours;
+    }
+
+    label += ":";
+
+    if (minutes > 9)
+    {
+        label += minutes
+    }
+    else
+    {
+        label += "0" + minutes;
+    }
+
+    label += ":";
+
+    if (seconds > 9)
+    {
+        label += seconds;
+    }
+    else
+    {
+        label += "0" + seconds;
+    }
+
+    label += "! Keep up the good work.";
+    document.getElementById("textChange").textContent = label;
   // Reset the time values
   hours = 0;
   minutes = 0;
