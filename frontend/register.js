@@ -37,6 +37,8 @@ document.getElementById("submit").addEventListener("click", function()
     setCookie("age", age, 100);
     setCookie("gender", gender, 100);
     console.log("Registered ", name, weight, height, age, gender)
-    
+
+
+
     window.location.replace("profile.html");
 });

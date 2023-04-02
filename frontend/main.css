@@ -1,5 +1,5 @@
 body {
-    background-color: lightblue;
+    background-color: #add8e6;
 }
 
 .nav-item:hover {
@@ -9,10 +9,9 @@ body {
 }
 .nav-link:hover
 {
-    text-shadow: 2px 2px 5px #000000;
+    
     color: red; /* we can change the colors to what whatever we want these colors are just for testing*/
 }
-
 
 .nav-item:active {
     background-color: grey;

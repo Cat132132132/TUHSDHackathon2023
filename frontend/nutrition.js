@@ -43,11 +43,17 @@ function addFoodBoxNotVisible() {
 
 function resetValues()
 {
-    for (let i = 0; i < 10; i++)
-    {
-        totalCount[i]=0
-        localStorage.setItem(storageNames[i], 0);
-    }
+    localStorage.setItem("CalorieCount", 0);
+    localStorage.setItem("TotalFatCount", 0);
+    localStorage.setItem("CarbohydrateCount", 0);
+    localStorage.setItem("SodiumCount", 0);
+    localStorage.setItem("SugarCount", 0);
+
+    localStorage.setItem("SaturatedFatCount", 0);
+    localStorage.setItem("CalciumCount", 0);
+    localStorage.setItem("CholesterolCount", 0);
+    localStorage.setItem("PotassiumCount", 0);
+    localStorage.setItem("IronCount", 0);
 }
 
 function returnValues()
@@ -64,33 +70,29 @@ function returnValues()
     var PotassiumCount = document.getElementById("PotassiumCount").value;
     var IronCount = document.getElementById("IronCount").value;
 
-    try {
-        totalCount[0] += parseInt(CalorieCount);
-        totalCount[1] += parseInt(TotalFatCount);
-        totalCount[2] += parseInt(CarbohydrateCount);
-        totalCount[3] += parseInt(SodiumCount);
-        totalCount[4] += parseInt(SugarCount);
+    totalCount[0] += parseInt(CalorieCount);
+    totalCount[1] += parseInt(TotalFatCount);
+    totalCount[2] += parseInt(CarbohydrateCount);
+    totalCount[3] += parseInt(SodiumCount);
+    totalCount[4] += parseInt(SugarCount);
 
-        totalCount[5] += parseInt(SaturatedFatCount);
-        totalCount[6] += parseInt(CalciumCount);
-        totalCount[7] += parseInt(CholesterolCount);
-        totalCount[8] += parseInt(PotassiumCount);
-        totalCount[9] += parseInt(IronCount);
-    } catch (error) {
-        console.log("Error assigning values.");
-    }
+    totalCount[5] += parseInt(SaturatedFatCount);
+    totalCount[6] += parseInt(CalciumCount);
+    totalCount[7] += parseInt(CholesterolCount);
+    totalCount[8] += parseInt(PotassiumCount);
+    totalCount[9] += parseInt(IronCount);
 
-    localStorage.setItem("CalorieCount", totalCount[0]);
-    localStorage.setItem("TotalFatCount", totalCount[1]);
-    localStorage.setItem("CarbohydrateCount", totalCount[2]);
-    localStorage.setItem("SodiumCount", totalCount[3]);
-    localStorage.setItem("SugarCount", totalCount[4]);
+    localStorage.setItem("CalorieCount", parseInt(CalorieCount));
+    localStorage.setItem("TotalFatCount", parseInt(TotalFatCount));
+    localStorage.setItem("CarbohydrateCount", parseInt(CarbohydrateCount));
+    localStorage.setItem("SodiumCount", parseInt(SodiumCount));
+    localStorage.setItem("SugarCount", parseInt(SugarCount));
 
-    localStorage.setItem("SaturatedFatCount", totalCount[5]);
-    localStorage.setItem("CalciumCount", totalCount[6]);
-    localStorage.setItem("CholesterolCount", totalCount[7]);
-    localStorage.setItem("PotassiumCount", totalCount[8]);
-    localStorage.setItem("IronCount", totalCount[9]);
+    localStorage.setItem("SaturatedFatCount", parseInt(SaturatedFatCount));
+    localStorage.setItem("CalciumCount", parseInt(CalciumCount));
+    localStorage.setItem("CholesterolCount", parseInt(CholesterolCount));
+    localStorage.setItem("PotassiumCount", parseInt(PotassiumCount));
+    localStorage.setItem("IronCount", parseInt(IronCount));
 }
 
 function getFood()
