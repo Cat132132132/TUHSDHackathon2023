@@ -14,20 +14,12 @@ const inputval = [
     "userAge"
 ];
 
-/**
- * gets cookies from user (W3Schools)
- * @param {*} cname 
- * @returns 
- */
-function getCookie(cname) 
-{
+function getCookie(cname) {
     let name = cname + "=";
     let ca = document.cookie.split(';');
-    for(let i = 0; i < ca.length; i++) 
-    {
+    for(let i = 0; i < ca.length; i++) {
       let c = ca[i];
-      while (c.charAt(0) == ' ') 
-      {
+      while (c.charAt(0) == ' ') {
         c = c.substring(1);
       }
       if (c.indexOf(name) == 0) {
@@ -35,57 +27,78 @@ function getCookie(cname)
       }
     }
     return "";
-}
+  }
 
-//getting values from cookies
-var age = getCookie("age");
-var username = getCookie("name");
-var gender = getCookie("gender");
-var weight = getCookie("weight");
-var height = getCookie("height");
-var BMI = calcBMI();
-var BMR = calcBMR();
-var heightIn = height % 12;
-var heightFt = (height - heightIn) / 12;
-
-/**
-     * Calculates resting calorie rate using the Mifflin-St Jeor Equation.
-     * @returns the basal metabolic rate, in calories per day.
-     */
-function calcBMR()
-{
-    if (gender == "male")
-    {
-        return 10*weight + 6.25*height - 5*age + 5;
-    }
-
-    else if (gender == "female")
-    {
-        return 10*weight + 6.25*height - 5*age - 161;
-    }
-}
-
-/**
-     * Calculates the Body Mass Index of a person, provided with their height and weight.
-     * @returns BMI
-     */
-function calcBMI()
-{
-    return (703*weight / (height*height)).toFixed(2);
-}
-
-//getting values from cookies
 function setValues() 
 {
-    document.getElementById("userAge").innerHTML = age;
-    document.getElementById("userName").innerHTML = username;
-    document.getElementById("userGender").innerHTML = gender;
-    document.getElementById("userWeight").innerHTML = weight;
-    document.getElementById("userHeightFt").innerHTML = heightFt;
-    document.getElementById("userHeightIn").innerHTML = heightIn;
-    document.getElementById("userBmi").innerHTML = BMI;
-    document.getElementById("userBmr").innerHTML = BMR;
+    if (getCookie("age") == null) {
+        console.log("age not found in cookies, setting default value")
+        document.getElementById("userAge").innerHTML = 0;
+    } 
+    else {
+        document.getElementById("userAge").innerHTML = getCookie("age");
+    }
+    
+    //
+    
+    if (getCookie("name") == null)
+    {
+        console.log("name not found in cookies, setting default value")
+        document.getElementById("userName").innerHTML = "Default User";
+    }
+    else
+    {
+        document.getElementById("userName").innerHTML = getCookie("name");
+    }
+    
+    //
+    
+    if (getCookie("gender") == null)
+    {
+        console.log("gender not found in cookies, setting default value")
+        document.getElementById("userGender").innerHTML = "Default Gender";
+    }
+    else
+    {
+        document.getElementById("userGender").innerHTML = getCookie("gender");
+    }
+    
+    //
+    
+    if (getCookie("weight") == null)
+    {
+        console.log("weight not found in cookies, setting default value")
+        document.getElementById("userWeight").innerHTML = "000.00";
+    }
+    else
+    {
+        let value = getCookie("weight");
+        if (value === "") {
+            document.getElementById("userWeight").innerHTML = "000.00";
+        } else {
+            document.getElementById("userWeight").innerHTML = parseInt(value).toFixed(2);
+        }
+    }
+    
+    //
+    
+    if (getCookie("height") == null)
+    {
+        document.getElementById("userHeight").innerHTML = "0'0";
+    }
+    else
+    {
+        document.getElementById("userHeight").innerHTML = getCookie("height");
+    }
+    
 };
+
+function setCookie(cname, cvalue, exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    let expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
 
 function logOut()
 {
@@ -96,7 +109,7 @@ function logOut()
     setCookie("gender", "Default Gender");
     window.user.setUserToNull();
     setValues();
-    location.reload();
+    window.location.reload();
 }
 
 window.onload = function() {
