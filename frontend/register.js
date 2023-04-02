@@ -29,7 +29,7 @@ $input.keyup(function() {
     trigger ? $register.attr('disabled', true) : $register.removeAttr('disabled');
 });
 
-document.getElementById("submit").addEventListener("click", function()
+document.getElementById("button").addEventListener("click", function()
 {
     
     var name = document.getElementsByName("name")[0].value;
