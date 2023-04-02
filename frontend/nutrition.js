@@ -103,16 +103,3 @@ function returnValues()
     localStorage.setItem("PotassiumCount", totalCount[8]);
     localStorage.setItem("IronCount", totalCount[9]);
 }
-
-function getFood()
-{
-
-}
-function updateValues()
-{
-
-}
-function getAPIValues()
-{
-
-}
