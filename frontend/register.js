@@ -1,6 +1,19 @@
 /**
- * 
+ * saves information from the form to cookies
  */
+
+/**
+ * sets cookie values
+ * @param {*} cname cookie name
+ * @param {*} cvalue cookie value
+ * @param {*} exdays expiry date (days from current date)
+ */
+function setCookie(cname, cvalue, exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    let expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
 
 document.getElementById("submit").addEventListener("click", function()
 {
@@ -17,11 +30,10 @@ document.getElementById("submit").addEventListener("click", function()
         var gender = document.getElementById("female").value;
     }
     
-    window.user = new User(name, weight, height, age, gender);
-    console.log("Registered ",name,weight,height,age,gender)
-    localStorage.setItem("name", name);
-    localStorage.setItem("weight", weight);
-    localStorage.setItem("height", height);
-    localStorage.setItem("age", age);
-    localStorage.setItem("gender", gender);
+    setCookie("name", name, 100);
+    setCookie("weight", weight, 100);
+    setCookie("height", height, 100);
+    setCookie("age", age, 100);
+    setCookie("gender", gender, 100);
+    console.log("Registered ", name, weight, height, age, gender)
 });
