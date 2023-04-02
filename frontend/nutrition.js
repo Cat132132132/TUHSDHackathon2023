@@ -14,10 +14,16 @@ const storageNames = [
     "PotassiumCount",  
     "IronCount"];
 
-for (let i = 0; i < 9; i++)
+for (let i = 0; i <= 9; i++)
 {
-    totalCount[i]=localStorage.getItem(storageNames[i])
-    console.log(storageNames[i], totalCount[i])
+    if (localStorage.getItem(storageNames[i])!=null) {
+        
+    totalCount[i]=parseFloat(localStorage.getItem(storageNames[i]));
+    } else {
+        totalCount[i]=0
+    }
+    
+    console.log(storageNames[i], totalCount[i]);
 }
 /**
  * IN ORDER
@@ -72,29 +78,30 @@ function returnValues()
     var PotassiumCount = document.getElementById("PotassiumCount").value;
     var IronCount = document.getElementById("IronCount").value;
     
-    CalorieCount = CalorieCount * ServingsConsumed;
-    TotalFatCount = TotalFatCount * ServingsConsumed;
-    CarbohydrateCount = CarbohydrateCount * ServingsConsumed;
-    SodiumCount = SodiumCount * ServingsConsumed;
-    SugarCount = SugarCount * ServingsConsumed;
+    
+    totalCount[0] += parseFloat(CalorieCount * ServingsConsumed);
+    totalCount[1] += parseFloat(TotalFatCount * ServingsConsumed);
+    totalCount[2] += parseFloat(CarbohydrateCount * ServingsConsumed);
+    totalCount[3] += parseFloat(SodiumCount * ServingsConsumed);
+    totalCount[4] += parseFloat(SugarCount * ServingsConsumed);
 
-    SaturatedFatCount = SaturatedFatCount * ServingsConsumed;
-    CalciumCount = CalciumCount * ServingsConsumed;
-    CholesterolCount = CholesterolCount * ServingsConsumed;
-    PotassiumCount = PotassiumCount * ServingsConsumed;
-    IronCount = IronCount * ServingsConsumed;
+    totalCount[5] += parseFloat(SaturatedFatCount * ServingsConsumed);
+    totalCount[6] += parseFloat(CalciumCount * ServingsConsumed);
+    totalCount[7] += parseFloat(CholesterolCount * ServingsConsumed);
+    totalCount[8] += parseFloat(PotassiumCount * ServingsConsumed);
+    totalCount[9] += parseFloat(IronCount * ServingsConsumed);
+    
+    localStorage.setItem("CalorieCount", totalCount[0]);
+    localStorage.setItem("TotalFatCount", totalCount[1]);
+    localStorage.setItem("CarbohydrateCount", totalCount[2]);
+    localStorage.setItem("SodiumCount", totalCount[3]);
+    localStorage.setItem("SugarCount", totalCount[4]);
 
-    localStorage.setItem("CalorieCount", parseInt(CalorieCount));
-    localStorage.setItem("TotalFatCount", parseInt(TotalFatCount));
-    localStorage.setItem("CarbohydrateCount", parseInt(CarbohydrateCount));
-    localStorage.setItem("SodiumCount", parseInt(SodiumCount));
-    localStorage.setItem("SugarCount", parseInt(SugarCount));
-
-    localStorage.setItem("SaturatedFatCount", parseInt(SaturatedFatCount));
-    localStorage.setItem("CalciumCount", parseInt(CalciumCount));
-    localStorage.setItem("CholesterolCount", parseInt(CholesterolCount));
-    localStorage.setItem("PotassiumCount", parseInt(PotassiumCount));
-    localStorage.setItem("IronCount", parseInt(IronCount));
+    localStorage.setItem("SaturatedFatCount", totalCount[5]);
+    localStorage.setItem("CalciumCount", totalCount[6]);
+    localStorage.setItem("CholesterolCount", totalCount[7]);
+    localStorage.setItem("PotassiumCount", totalCount[8]);
+    localStorage.setItem("IronCount", totalCount[9]);
 }
 
 function getFood()
