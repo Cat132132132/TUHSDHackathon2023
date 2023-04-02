@@ -19,7 +19,8 @@ document.getElementById("submit").addEventListener("click", function()
 {
     var name = document.getElementsByName("name")[0].value;
     var weight = document.getElementsByName("weight")[0].value;
-    var height = document.getElementsByName("height")[0].value;
+    //the *1 at the end of the next line converts the number of inches to a int
+    var height = document.getElementsByName("height_ft")[0].value*12+document.getElementsByName("height_in")[0].value*1;
     var age = document.getElementsByName("age")[0].value;
     if(document.getElementById('male').checked)
     {
