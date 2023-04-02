@@ -16,7 +16,8 @@ const storageNames = [
 
 for (let i = 0; i < 9; i++)
 {
-    localStorage.setItem[storageNames[i]] = 0;
+    totalCount[i]=localStorage.getItem(storageNames[i])
+    console.log(storageNames[i], totalCount[i])
 }
 /**
  * IN ORDER
@@ -44,6 +45,7 @@ function resetValues()
 {
     for (let i = 0; i < 10; i++)
     {
+        totalCount[i]=0
         localStorage.setItem(storageNames[i], 0);
     }
 }
