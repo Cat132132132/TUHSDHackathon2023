@@ -66,24 +66,23 @@ function returnValues()
     var SodiumCount = document.getElementById("SodiumCount").value;
     var SugarCount = document.getElementById("SugarCount").value;
 
-    
     var SaturatedFatCount = document.getElementById("SaturatedFatCount").value;
     var CalciumCount = document.getElementById("CalciumCount").value;
     var CholesterolCount = document.getElementById("CholesterolCount").value;
     var PotassiumCount = document.getElementById("PotassiumCount").value;
     var IronCount = document.getElementById("IronCount").value;
     
-    totalCount[0] += parseInt(CalorieCount)*ServingsConsumed;
-    totalCount[1] += parseInt(TotalFatCount)*ServingsConsumed;
-    totalCount[2] += parseInt(CarbohydrateCount)*ServingsConsumed;
-    totalCount[3] += parseInt(SodiumCount)*ServingsConsumed;
-    totalCount[4] += parseInt(SugarCount)*ServingsConsumed;
+    CalorieCount = CalorieCount * ServingsConsumed;
+    TotalFatCount = TotalFatCount * ServingsConsumed;
+    CarbohydrateCount = CarbohydrateCount * ServingsConsumed;
+    SodiumCount = SodiumCount * ServingsConsumed;
+    SugarCount = SugarCount * ServingsConsumed;
 
-    totalCount[5] += parseInt(SaturatedFatCount)*ServingsConsumed;
-    totalCount[6] += parseInt(CalciumCount)*ServingsConsumed;
-    totalCount[7] += parseInt(CholesterolCount)*ServingsConsumed;
-    totalCount[8] += parseInt(PotassiumCount)*ServingsConsumed;
-    totalCount[9] += parseInt(IronCount)*ServingsConsumed;
+    SaturatedFatCount = SaturatedFatCount * ServingsConsumed;
+    CalciumCount = CalciumCount * ServingsConsumed;
+    CholesterolCount = CholesterolCount * ServingsConsumed;
+    PotassiumCount = PotassiumCount * ServingsConsumed;
+    IronCount = IronCount * ServingsConsumed;
 
     localStorage.setItem("CalorieCount", parseInt(CalorieCount));
     localStorage.setItem("TotalFatCount", parseInt(TotalFatCount));
