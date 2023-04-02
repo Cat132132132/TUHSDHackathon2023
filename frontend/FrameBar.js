@@ -74,7 +74,7 @@ function draw()
 
     ctx2.font = '12px Arial';
     ctx2.fillStyle = "black";
-    ctx2.fillText("100", 5, 15);
+    ctx2.fillText("1,000", 5, 15);
     ctx2.fillStyle = "black";
     ctx2.fillText("0", 10, canvas2Height - 10);
 
