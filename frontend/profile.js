@@ -86,7 +86,7 @@ function setValues()
     document.getElementById("userBmi").innerHTML = BMI;
     document.getElementById("userBmr").innerHTML = BMR;
 };
-
+document.getElementById("logout").addEventListener("click", logOut); 
 function logOut()
 {
     setCookie("name", "Default User");
@@ -96,7 +96,7 @@ function logOut()
     setCookie("gender", "Default Gender");
     window.user.setUserToNull();
     setValues();
-    location.reload();
+    window.location.reload();
 }
 
 window.onload = function() {
